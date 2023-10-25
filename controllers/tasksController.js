@@ -11,7 +11,7 @@ const getTasks = async (_req, res) => {
 };
 
 const addTask = async (req, res) => {
-    const { title, description } = req.body;
+    const { title, description } = req.body.data;
     try {
         const newTask = new Task({ title, description })
         await newTask.save();
